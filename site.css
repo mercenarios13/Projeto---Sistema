@@ -15,6 +15,7 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 header img {
@@ -46,7 +47,7 @@ header h1 {
 .menu-opcoes {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 80px;
     right: 20px;
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
@@ -102,4 +103,25 @@ footer {
     color: white;
     margin-top: 20px;
     font-size: 14px;
+}
+
+/* Responsividade para menu */
+@media (min-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-opcoes {
+        display: flex !important;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        flex-direction: row;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .menu-opcoes a {
+        padding: 0;
+    }
 }

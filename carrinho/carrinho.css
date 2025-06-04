@@ -1,0 +1,119 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #dc2626;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Conteúdo */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Itens do carrinho */
+.itens-carrinho .item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  gap: 20px;
+}
+
+.item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item .detalhes {
+  flex: 1;
+}
+
+.item h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.item p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.item button {
+  background-color: #e11d48;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.item button:hover {
+  background-color: #be123c;
+}
+
+/* Resumo */
+.resumo {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.resumo h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.resumo p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.finalizar {
+  background-color: #16a34a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.finalizar:hover {
+  background-color: #15803d;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+}
