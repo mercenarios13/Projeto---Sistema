@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status - Academia Gym Leveling</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <header>
+        <img src="./imagens/logo.png" alt="Logo" class="logo">
+        <h1>Status do Aluno</h1>
+        <div class="menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-opcoes" id="menuOpcoes">
+            <a href="index.html">Início</a>
+            <a href="status.html">Status</a>
+            <a href="loja.html">Loja</a>
+            <a href="carrinho.html">Carrinho</a>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Seu Progresso</h2>
+            <p>Treinos concluídos: 15<br>Calorias queimadas: 3.500<br>Próxima avaliação: 20/05/2025</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Academia Gym Leveling. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menuOpcoes = document.getElementById('menuOpcoes');
+            if (menuOpcoes.style.display === 'block') {
+                menuOpcoes.style.display = 'none';
+            } else {
+                menuOpcoes.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

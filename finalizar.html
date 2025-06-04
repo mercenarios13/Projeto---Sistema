@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Academia Gym Leveling</title>
+    <link rel="stylesheet" href="site.css">
+    <style>
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+        }
+
+        .summary {
+            background-color: #1f1f1f;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .summary p {
+            margin: 10px 0;
+        }
+
+        .payment-methods {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .payment-methods label {
+            font-size: 16px;
+            color: white;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .payment-methods select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #1f1f1f;
+            color: white;
+        }
+
+        .payment-details {
+            margin-top: 20px;
+            text-align: left;
+            display: none;
+        }
+
+        .payment-details input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #1f1f1f;
+            color: white;
+        }
+
+        .finalize {
+            margin-top: 20px;
+        }
+
+        .finalize button {
+            background-color: #42e22d;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .finalize button:hover {
+            background-color: #36b523;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./imagens/logo.png" alt="Logo" class="logo">
+        <h1>Finalizar Compra</h1>
+    </header>
+
+    <div class="container">
+        <h1>Resumo do Pedido</h1>
+        <div class="summary">
+            <h2>Itens no Pedido</h2>
+            <div id="orderSummary"></div>
+            <p>Total: R$ <span id="cartTotal">0</span></p>
+        </div>
+
+        <div class="payment-methods">
+            <h2>Forma de Pagamento</h2>
+            <label for="paymentSelect">Selecione a forma de pagamento:</label>
+            <select id="paymentSelect" onchange="showPaymentDetails()">
+                <option value="">Selecione</option>
+                <option value="cartao">Cartão de Crédito</option>
+                <option value="boleto">Boleto Bancário</option>
+                <option value="pix">PIX</option>
+            </select>
+        </div>
+
+        <div id="paymentDetails" class="payment-details">
+        </div>
+
+        <div class="finalize">
+            <button onclick="completePurchase()">Concluir Compra</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Academia Gym Leveling. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+        function loadOrderSummary() {
+            const orderSummary = document.getElementById('orderSummary');
+            const cartTotal = document.getElementById('cartTotal');
+            orderSummary.innerHTML = '';
+            cart.forEach(item => {
+                const orderItem = document.createElement('p');
+                orderItem.innerHTML = `<img src="${item.image}" alt="${item.name}" style="height: 50px; margin-right: 10px;"> ${item.name} - R$ ${item.price}`;
+                orderSummary.appendChild(orderItem);
+            });
+            cartTotal.textContent = total;
+        }
+
+        function showPaymentDetails() {
+            const paymentSelect = document.getElementById('paymentSelect').value;
+            const paymentDetails = document.getElementById('paymentDetails');
+            paymentDetails.innerHTML = '';
+            if (paymentSelect === 'cartao') {
+                paymentDetails.innerHTML = `
+                    <h3>Dados do Cartão</h3>
+                    <input type="text" placeholder="Nome no Cartão" required>
+                    <input type="text" placeholder="Número do Cartão" required>
+                    <input type="text" placeholder="Validade (MM/AA)" required>
+                    <input type="text" placeholder="CVV" required>
+                `;
+            } else if (paymentSelect === 'pix') {
+                paymentDetails.innerHTML = `
+                    <h3>Dados para PIX</h3>
+                    <input type="text" placeholder="Chave PIX" required>
+                    <input type="text" placeholder="Nome do Titular" required>
+                `;
+            } else if (paymentSelect === 'boleto') {
+                paymentDetails.innerHTML = `
+                    <h3>Boleto Bancário</h3>
+                    <p>O boleto será gerado após a conclusão da compra.</p>
+                `;
+            }
+
+            paymentDetails.style.display = 'block';
+        }
+
+        function completePurchase() {
+            const paymentMethod = document.getElementById('paymentSelect').value;
+            if (!paymentMethod) {
+                alert('Por favor, selecione uma forma de pagamento.');
+                return;
+            }
+
+            alert(`Compra concluída com sucesso! Forma de pagamento: ${paymentMethod.toUpperCase()}`);
+            localStorage.removeItem('cart');
+            window.location.href = 'index.html';
+        }
+
+        loadOrderSummary();
+    </script>
+</body>
+</html>

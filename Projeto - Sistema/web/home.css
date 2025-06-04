@@ -1,0 +1,255 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(../web/imagens/background.gif) no-repeat center center fixed;
+    background-size: cover;
+}
+
+header{
+    background:url(./imagens/header.jpg);
+    background-size: cover;
+    width: 100%;
+    max-width: 1920px;
+    height: 140px;
+    align-items: left;
+    justify-content: left;
+    display: flex;
+    text-align: center;
+    
+
+    & .gym{
+    font-family: Odibee Sans;
+    margin-top: 40px;
+    font-size: 50px;
+    margin-left: 30px;
+    display: flex;
+    }
+
+   & .logo{
+    margin-left: 20px;
+    cursor: pointer;
+    width: 170px;
+    height: 150px;
+    margin-top: -8px;
+   }
+
+   & .cadastrar{
+    width: 150px;
+    height: 75px;
+    text-align: center;
+    font-family: Odibee Sans;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+    background-color: rgb(26, 50, 187, 0.8);
+    border: solid rgb(0, 255, 255, 0.6);
+    border-radius: 5px;
+    border-width: 2px;
+    cursor: pointer;
+    font-size: 32px;
+    margin-top: 35px;
+    margin-left: 980px;
+   }
+
+   & .entrar{
+    width: 150px;
+    height: 75px;
+    text-align: center;
+    font-family: Odibee Sans;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+    background-color: rgb(26, 50, 187, 0.8);
+    border: solid rgb(0, 255, 255, 0.6);
+    border-radius: 5px;
+    border-width: 2px;
+    cursor: pointer;
+    font-size: 32px;
+    margin-top: 35px;
+    margin-left: 20px;
+   }
+
+   & .cadastrar:hover{
+    color: rgb(255, 255, 255);
+    border-color: rgb(0, 255, 255, 0.6);
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    box-shadow: 0 0 15px rgb(0, 255, 255, 0.6);
+   }
+
+   & .entrar:hover{
+    color: rgb(255, 255, 255);
+    border-color: rgb(0, 255, 255, 0.6);
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    box-shadow: 0 0 15px rgb(0, 255, 255, 0.6);
+   }
+}
+
+footer{
+    background:url(./imagens/header.jpg);
+    background-size: cover;
+    width: 100%;
+    max-width: 1920px;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Odibee Sans;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    margin-top: 820px;
+}
+
+@media (max-width: 768px) {
+  header, footer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cadastrar, .entrar {
+    margin: 10px;
+  }
+}
+
+.janela2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: Odibee Sans;
+    font-size: 30px;
+    z-index: 1;
+    background-color: rgba(26, 50, 187, 0.8);
+    width: 100%;
+    max-width: 830px;
+    height: 530px;
+    border: solid rgba(62, 235, 241, 0.6);
+    border-width: 9px;
+    box-shadow: 0 0 20px rgb(67, 196, 247);
+    overflow: hidden;
+    animation: abrirJanela 0.25s ease-out forwards;
+    margin: 0 20px;
+    box-sizing: border-box;
+    position: absolute;
+    margin-left: 388px;
+}
+
+@keyframes abrirJanela {
+    0% {
+        height: 0;
+        margin-top: 50px;
+    }
+    100% {
+        height: 700px;
+        width: 100%;
+        max-width: 1100px;
+        margin-top: 60px;
+    }
+}
+
+hr {
+    width: 600px;
+    margin-top: 30px;
+    color: rgb(255, 255, 255);
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 50px;
+}
+
+.formulario {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.formulario input {
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid cyan;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  width: 700px;
+  margin-top: 10px;
+}
+
+.formulario input::placeholder {
+  color: white;
+}
+
+.botao1 {
+  background: transparent;
+  border: 2px solid cyan;
+  padding: 20px 40px;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.botao1:hover {
+  color: white;
+  border-color: white;
+  text-shadow: 0 0 5px white;
+  box-shadow: 0 0 15px cyan;
+}
+
+.formulario2{
+  margin-top: -40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.formulario2 input {
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid cyan;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  width: 700px;
+  margin-top: 10px;
+}
+
+.formulario2 input::placeholder {
+  color: white;
+}
+
+.botao {
+  background: transparent;
+  border: 2px solid cyan;
+  padding: 20px 40px;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.botao:hover {
+  color: white;
+  border-color: white;
+  text-shadow: 0 0 5px white;
+  box-shadow: 0 0 15px cyan;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Gym Leveling</title>
+    <link rel="stylesheet" href="site.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        header h1 {
+            color: #42e22d;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .menu {
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        .menu-opcoes {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-opcoes a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 8px 0;
+            font-size: 16px;
+        }
+
+        .menu-opcoes a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 30px;
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            color: #42e22d;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1f1f1f;
+            color: white;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./imagens/logo.png" alt="Logo" class="logo">
+        <h1>Bem-vindo à Academia Gym Leveling</h1>
+        <div class="menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-opcoes" id="menuOpcoes">
+            <a href="index.html">Início</a>
+            <a href="status.html">Status</a>
+            <a href="loja.html">Loja</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="login.html">Login</a>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Sobre Nós</h2>
+            <p>
+                Transforme sua vida com treinos personalizados, equipamentos de última geração e uma equipe de profissionais dedicados ao seu bem-estar.
+                Conheça mais sobre nossa história e valores na página <a href="sobre.html" style="color: #42e22d; text-decoration: underline;">Sobre Nós</a>.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Academia Gym Leveling. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menuOpcoes = document.getElementById('menuOpcoes');
+            menuOpcoes.style.display = menuOpcoes.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
